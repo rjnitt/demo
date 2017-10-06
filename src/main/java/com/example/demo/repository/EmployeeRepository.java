@@ -8,7 +8,9 @@ import com.example.demo.domain.Employee;
 
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 
-	  Employee findByName(String name);
+	  Employee findOneByName(String name);
+	  
+	  List<Employee> findAll();
 	  
 	  
 

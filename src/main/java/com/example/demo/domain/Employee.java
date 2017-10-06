@@ -1,27 +1,25 @@
 package com.example.demo.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
 
-	private @Id @GeneratedValue Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(name = "name")
 	private String name;
-	private Integer age, mobile;
-
-	private Employee() {
-	}
-	
-	public Employee(String name, Integer age, Integer mobile) {
-
-		this.name = name;
-		this.age = age;
-		this.mobile = mobile;
-	}
-
+	@Column(name = "age")
+	private Integer age;
+	@Column(name = "mobile")
+	private Integer mobile;
 
 	public Long getId() {
 		return id;
@@ -55,5 +53,4 @@ public class Employee {
 		this.mobile = mobile;
 	}
 
-	
 }
