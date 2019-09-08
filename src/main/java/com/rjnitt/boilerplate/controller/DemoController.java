@@ -15,26 +15,24 @@ import com.rjnitt.boilerplate.repository.EmployeeRepository;
 public class DemoController {
 
 	@Autowired
-	EmployeeRepository empRep;
-	
-	
-	@RequestMapping(value="/find", method = RequestMethod.GET)
-    public Employee addVoucher() {
-    
-    	return empRep.findOneByName("abc");
-    }
-	
-	
-	@RequestMapping(value="/findAll", method = RequestMethod.GET)
-    public List<Employee> findAllRecord() {
-    
-    	return empRep.findAll();
-    }
-	
-	@RequestMapping(value="/save", method = RequestMethod.POST)
-    public Employee saveEmp(Employee emp) {
-   
-    	return empRep.save(emp);
-    }
-	
+	private EmployeeRepository empRep;
+
+	@RequestMapping(value = "/find", method = RequestMethod.GET)
+	public Employee addVoucher() {
+
+		return empRep.findOneByName("abc");
+	}
+
+	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
+	public List<Employee> findAllRecord() {
+
+		return empRep.findAll();
+	}
+
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public Employee saveEmp(Employee emp) {
+
+		return empRep.save(emp);
+	}
+
 }
