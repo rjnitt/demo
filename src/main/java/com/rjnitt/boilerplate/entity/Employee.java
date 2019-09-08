@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.rjnitt.boilerplate.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
